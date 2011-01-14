@@ -20,7 +20,7 @@ module EventMachine
     def spool_messages
       logger = self
       @log_queue.pop {|m|
-        @file_handle.write(message + "\n")  
+        @file_handle.write(m + "\n")  
         logger.spool_messages
       }
     end
